@@ -29,7 +29,6 @@
             border-radius: 25px;
             left:58px;
             top:172px; 
-            background-color: green;
         }
         .P01
         {
@@ -39,7 +38,6 @@
             border-radius: 25px;
             left:150px;
             top:172px; 
-            background-color: green;
         }
         .P10
         {
@@ -49,7 +47,6 @@
             border-radius: 25px;
             left:58px;
             top:260px; 
-            background-color: green;
         }
         .P11
         {
@@ -59,7 +56,6 @@
             border-radius: 25px;
             left:150px;
             top:260px; 
-            background-color: green;
         }
         .P20
         {
@@ -69,7 +65,6 @@
             border-radius: 25px;
             left:58px;
             top:350px; 
-            background-color: green;
         }
         .P21
         {
@@ -79,7 +74,6 @@
             border-radius: 25px;
             left:150px;
             top:350px; 
-            background-color: green;
         }
         .P30
         {
@@ -89,7 +83,6 @@
             border-radius: 25px;
             left:58px;
             top:440px; 
-            background-color: green;
         }
         .P31
         {
@@ -99,7 +92,6 @@
             border-radius: 25px;
             left:150px;
             top:440px; 
-            background-color: green;
         }
         .P40
         {
@@ -109,7 +101,6 @@
             border-radius: 25px;
             left:58px;
             top:530px; 
-            background-color: green;
         }
         .P41
         {
@@ -119,7 +110,6 @@
             border-radius: 25px;
             left:150px;
             top:530px; 
-            background-color: green;
         }
         .P50
         {
@@ -129,7 +119,6 @@
             border-radius: 25px;
             left:58px;
             top:619px; 
-            background-color: green;
         }
         .P51
         {
@@ -139,7 +128,6 @@
             border-radius: 25px;
             left:150px;
             top:619px; 
-            background-color: green;
         }
         .P02
         {
@@ -149,7 +137,6 @@
             border-radius: 25px;
             left:320px;
             top:172px; 
-            background-color: green;
         }
         .P03
         {
@@ -159,7 +146,6 @@
             border-radius: 25px;
             left:413px;
             top:172px; 
-            background-color: green;
         }
         .P12
         {
@@ -169,7 +155,6 @@
             border-radius: 25px;
             left:320px;
             top:260px; 
-            background-color: green;
         }
         .P13
         {
@@ -179,7 +164,6 @@
             border-radius: 25px;
             left:413px;
             top:260px; 
-            background-color: green;
         }
         .P22
         {
@@ -189,7 +173,6 @@
             border-radius: 25px;
             left:320px;
             top:350px; 
-            background-color: green;
         }
         .P23
         {
@@ -199,7 +182,6 @@
             border-radius: 25px;
             left:413px;
             top:350px; 
-            background-color: green;
         }
         .P32
         {
@@ -209,7 +191,6 @@
             border-radius: 25px;
             left:320px;
             top:440px; 
-            background-color: green;
         }
         .P33
         {
@@ -219,7 +200,6 @@
             border-radius: 25px;
             left:413px;
             top:440px; 
-            background-color: green;
         }
         .P42
         {
@@ -229,7 +209,6 @@
             border-radius: 25px;
             left:320px;
             top:530px; 
-            background-color: green;
         }
         .P43
         {
@@ -239,7 +218,6 @@
             border-radius: 25px;
             left:413px;
             top:530px; 
-            background-color: green;
         }
         .P52
         {
@@ -249,7 +227,6 @@
             border-radius: 25px;
             left:320px;
             top:619px; 
-            background-color: green;
         }
         .P53
         {
@@ -259,7 +236,6 @@
             border-radius: 25px;
             left:413px;
             top:619px; 
-            background-color: green;
         }
         .mensagem
         {
@@ -305,54 +281,41 @@
         <div onclick="Preencher('P51');" class="P51" id="P51"></div>
         <div onclick="Preencher('P52');" class="P52" id="P52"></div>
         <div onclick="Preencher('P53');" class="P53" id="P53"></div>
-
-        
     </div>
     <br>
-    <body>
-        <div class="mensagem" id="mensagem">
-            Poltronas ocupadas: <span id="contador">0</span>
-        </div>
-       
-        <script>
-             contador = 0;
-        
-            function Contador() 
-            {
-                document.getElementById('contador').textContent = contador; 
-            }
-        
-            function Preencher() 
-            {
-                // Seleciona todos os elementos cujas classes começam com "P"
-                const elementos = document.querySelectorAll('[class^="P"][class$="0"], [class^="P"][class$="1"], [class^="P"][class$="2"], [class^="P"][class$="3"], [class^="P"][class$="4"], [class^="P"][class$="5"]');
-                elementos.forEach(elemento => 
-                {
-                    elemento.addEventListener('click', function() 
-                    {
-                        
-                        if (this.style.backgroundColor === 'red') 
-                        {
-                            this.style.backgroundColor = ''; 
-                                contador--; 
-                        } 
-                        else 
-                            {
-                             this.style.backgroundColor = 'red'; 
-                                contador++; 
-                            }
-                       
-                            Contador(); 
-                    });
-                });
-                
-            }
-        
-        
-        </script>
-    </body>
-    
+    <div class="mensagem" id="mensagem">Poltronas vendidas</div>
+</body>
 
+<script>
+   function Limpar()
+   {
+    for(linha=0;linha<=5;linha++)
+    {
+        for(coluna=0;coluna<=3;coluna++)
+        {
+            meu_id = "P" + linha + coluna
+            document.getElementById(meu_id).style.backgroundColor = "green"
+
+        }
+    }
+   }
+
+   vendidas = 0
+   function Preencher(meu_id)
+   {
+    if (document.getElementById(meu_id).style.backgroundColor == "green")
+    {
+        document.getElementById(meu_id).style.backgroundColor = "red"
+        vendidas = vendidas + 1
+        mensagem.innerHTML = "Poltronas vendidas:" + vendidas
+    }
+    else
+    {
+        document.getElementById(meu_id).style.backgroundColor = "green"
+        vendidas = vendidas - 1
+        mensagem.innerHTML = "Poltronas vendidas:" + vendidas
+    }
+   }
 
 
 </script>
