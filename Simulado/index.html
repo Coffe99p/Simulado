@@ -288,34 +288,35 @@
 
 <script>
    function Limpar()
-   {
-    for(linha=0;linha<=5;linha++)
+{
+    for(linha=0;linha<=5;linha++) // Loop pelas linhas (0 a 5)
     {
-        for(coluna=0;coluna<=3;coluna++)
+        for(coluna=0;coluna<=3;coluna++) // Loop pelas colunas (0 a 3)
         {
-            meu_id = "P" + linha + coluna
-            document.getElementById(meu_id).style.backgroundColor = "green"
+            meu_id = "P" + linha + coluna // Gera o ID baseado na linha e coluna
+            document.getElementById(meu_id).style.backgroundColor = "green" // Define a cor de fundo como verde
 
         }
     }
-   }
+}
 
-   vendidas = 0
-   function Preencher(meu_id)
-   {
-    if (document.getElementById(meu_id).style.backgroundColor == "green")
+vendidas = 0 // Variável global para armazenar a quantidade de poltronas vendidas
+function Preencher(meu_id)
+{
+    if (document.getElementById(meu_id).style.backgroundColor == "green") // Se a cor de fundo for verde
     {
-        document.getElementById(meu_id).style.backgroundColor = "red"
-        vendidas = vendidas + 1
-        mensagem.innerHTML = "Poltronas vendidas:" + vendidas
+        document.getElementById(meu_id).style.backgroundColor = "red" // Define a cor de fundo como vermelho
+        vendidas = vendidas + 1 // Incrementa a quantidade de poltronas vendidas
+        mensagem.innerHTML = "Poltronas vendidas:" + vendidas // Atualiza a mensagem de quantidade de poltronas vendidas
     }
     else
     {
-        document.getElementById(meu_id).style.backgroundColor = "green"
-        vendidas = vendidas - 1
-        mensagem.innerHTML = "Poltronas vendidas:" + vendidas
+        document.getElementById(meu_id).style.backgroundColor = "green" // Define a cor de fundo como verde
+        vendidas = vendidas - 1 // Decrementa a quantidade de poltronas vendidas
+        mensagem.innerHTML = "Poltronas vendidas:" + vendidas // Atualiza a mensagem de quantidade de poltronas vendidas
     }
-   }
+}
+
 
 
 </script>
